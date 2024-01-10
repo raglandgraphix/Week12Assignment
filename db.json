@@ -1,0 +1,26 @@
+{
+  "race": [
+    {
+      "title": "100k",
+      "distance": "100,000 Kilometers",
+      "competitors":{
+        "id":1,
+        "name":"Fast Freddy",
+        "age":25,
+        "city":"Lincoln",
+        "State":"Nebraksa"
+      }
+    },
+    {
+      "title": "50k",
+      "distance": "50,000 Kilometers",
+      "competitors":{
+        "id":1,
+        "name":"Speedy Gonzalez",
+        "age":18,
+        "city":"Kansas City",
+        "State":"Misouri"
+      }
+    }
+  ]
+}
