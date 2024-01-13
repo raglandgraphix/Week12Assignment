@@ -26,15 +26,6 @@
       "age": 19,
       "city": "Dallas",
       "state": "Texas"
-    },
-    {
-      "distance": "100,000 Kilometers",
-      "title": "100k",
-      "name": "John M. Ragland",
-      "age": "52",
-      "city": "Lincoln",
-      "state": "NE",
-      "id": 4
     }
   ]
 }
