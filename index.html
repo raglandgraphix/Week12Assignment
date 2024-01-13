@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raglands Big Gravel Adventure</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<style>
+  td{
+    width:340px;
 
+  }
+
+  
+</style>
 </head>
 <body>
   <div class="container-fluid">
@@ -15,31 +22,95 @@
       </div>
     </div>
     <div class="row">
-      <form action="#">
-        <label>Name</label><input id="fullName" type="text" name="name" value="">
-        <label>Age</label><input id="age" type="text" name="age" value="">
-        <label>City</label><input id="city" type="text" name="city" value="">
-        <label>State</label><input id="state" type="text" name="state" value="">
-        <select id="distance" required>
-          <option selected>Distance</option>
-          <option value="50k">50K</option>
-          <option value="100k">100K</option>
-        </select>
-        
-        <button id="submit" type="button">Add Competitor</button>
+      <div class="col-6 border">
+        <div class="row mt-3">
+          <div class="col">
+            <h3 class="d-flex justify-content-center bg-dark text-white ">ADD ATHLETE</h3>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form class="form">
+                <div class="row">
+                  <div class="col-5">
+                    <label class="ms-5 me-2">Name</label><input class="form-control me-3" id="fullName" type="text" name="name" value="">
+                    <label class="ms-5 me-2">City</label><input class="form-control me-3" id="city" type="text" name="city" value="">
+                    <select class="mt-3" id="distance" required>
+                      <option selected>Distance</option>
+                      <option value="50k">50K</option>
+                      <option value="100k">100K</option>
+                    </select>    
+                  </div>
+                  <div class="col-5">
+                    <label class="ms-5 me-2">Age</label><input class="form-control" id="age" type="text" name="age" value="">
+                    <label class="ms-5 me-2">State</label><input class="form-control" id="state" type="text" name="state" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex justify-content-center">
+                    <button class=" btn mb-5 btn-primary" id="submit" type="button">Add Competitor</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 border">
+        <div class="row mt-3">
+          <div class="col">
+            <h3 class="d-flex justify-content-center bg-dark text-white ">UPDATE ATHLETE</h3>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form>
+                <div class="row">
+                  <div class="col-5">
+                    <div class="row">
+                      <div class="col-6">
+                        <label>Race ID</label><input class="form-control" id="raceId" type="text" name="raceId" value="">
+                      </div>
+                      <div class="col-6">
+                        <label>Name</label><input class="form-control" id="uname" type="text" name="name" value="">
+                      </div>
+                    </div>
+                    <label>City</label><input class="form-control" id="ucity" type="text" name="city" value="">
+                    <select class="mt-3" id="udistance" required>
+                      <option selected>Distance</option>
+                      <option value="50k">50K</option>
+                      <option value="100k">100K</option>
+                    </select>
+                  </div>
+                  <div class="col-5">
+                    <label>Age</label><input class="form-control" id="uage" type="text" name="age" value="">
+                    <label>State</label><input class="form-control" id="ustate" type="text" name="state" value="">
+                  </div>
+                  <div class="row">
+                    <div class="col d-flex justify-content-center">
+                      <button class=" btn mb-5 btn-primary" id="updateAthlete" type="button">update</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
 
-      </form>
+            </div>
+          </div>
+        </div>
+      </div>
+     
     </div>
     <div class="row">
-      <div class="col">
-        <table>
-          <caption>100K Race</caption>
+      <div class="col d-flex text-center">
+        <table class="table caption-top">
+          <caption class="text-center mt-5">100K Race</caption>
+          
           <thead >
               <tr>
+                <th>Race Id</th>
                   <th>NAME</th>
                   <th>AGE</th>
                   <th>CITY</th>
                   <th>STATE</th>
+                  <th>Delete Athlete</th>
               </tr>
           </thead>
           <tbody id="100kTable">
@@ -48,15 +119,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <table>
-          <caption>50K Race</caption>
+      <div class="col d-flex text-center">
+        <table  class="table caption-top ">
+          <caption class="text-center mt-5">50K Race</caption>
           <thead >
               <tr>
+                <th>Race Id</th>
                   <th>NAME</th>
                   <th>AGE</th>
                   <th>CITY</th>
-                  <th>STATE</th>
+                  <th>Delete Athlete</th>
               </tr>
           </thead>
           <tbody id="50kTable">

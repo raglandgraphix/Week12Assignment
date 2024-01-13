@@ -13,6 +13,7 @@ $.get('http://localhost:3000/race').then(data => {
             
            $('#100kTable').append(`
            <tr>
+           <td>${val.id}</td>
            <td>${val.name}</td>
            <td>${val.age}</td>
            <td>${val.city}</td>
@@ -25,6 +26,7 @@ $.get('http://localhost:3000/race').then(data => {
     }else if(tableName==='50k'){
         $('#50kTable').append(`
             <tr>
+                <td>${val.id}</td>
                 <td>${val.name}</td>
                 <td>${val.age}</td>
                 <td>${val.city}</td>
@@ -52,7 +54,7 @@ $.get('http://localhost:3000/race').then(data => {
         const age = document.querySelector('#age').value;
         const city = document.querySelector('#city').value;
         const state = document.querySelector('#state').value;
-       console.log(distance);
+       //console.log(distance);
         let raceDistance;
         if(distance==='100k'){
             raceDistance = '100,000 Kilometers';
@@ -81,3 +83,35 @@ $.get('http://localhost:3000/race').then(data => {
         type: 'DELETE'
        })
     };
+
+    const updateUser = function(){
+        const id = document.querySelector('#raceId').value;
+        const uname =  document.querySelector('#uname').value;
+        const uage =  document.querySelector('#uage').value;
+        const ucity =  document.querySelector('#ucity').value;
+        const ustate =  document.querySelector('#ustate').value;
+        const udistance =  document.querySelector('#udistance').value;
+        let raceDistance;
+        if(udistance==='100k'){
+            raceDistance = '100,000 Kilometers';
+        }else if(udistance==='50k'){
+            raceDistance = '50,000 Kilometers';
+        }
+     $.ajax(`${URL_ENDPOINT}/${id}`, {
+        method:'PUT',
+        data:{
+            distance:raceDistance,
+            title:udistance,
+            name:uname,
+            age:uage,
+            city:ucity,
+            state:ustate,
+        
+
+        }
+     })  
+        
+    }
+
+    const updateButton = document.querySelector("#updateAthlete");
+    updateButton.addEventListener('click',updateUser);
